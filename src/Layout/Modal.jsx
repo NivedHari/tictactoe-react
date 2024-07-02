@@ -3,6 +3,7 @@ import { IoCloseSharp } from "react-icons/io5";
 import { FaExclamationCircle } from "react-icons/fa";
 import { BiHappyAlt } from "react-icons/bi";
 
+
 export default function Modal({
   isDark,
   isVisible,
@@ -12,6 +13,7 @@ export default function Modal({
   isXNext,
 }) {
   if (!isVisible) return null;
+
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex flex-col justify-center items-center transition-all duration-300 select-none">

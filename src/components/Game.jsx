@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
 import Board from "./Board";
 import Modal from "../Layout/Modal";
+import Confetti from "../Layout/Confetti";
 
 export default function Game() {
   const [board, setBoard] = useState(Array(3).fill(Array(3).fill(null)));
@@ -11,6 +12,7 @@ export default function Game() {
   const [isDark, setIsDark] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [scores, setScores] = useState({ red: 0, blue: 0 });
+ 
 
   useEffect(() => {
     const checkDraw = () => {
@@ -107,6 +109,7 @@ export default function Game() {
         isDark ? "bg-slate-700" : "bg-slate-300"
       } transition-colors duration-300`}
     >
+    {isOver && <Confetti/>}
       <div className="absolute top-10">
         <h1
           className={` text-5xl font-bold select-none ${
